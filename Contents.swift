@@ -1,50 +1,44 @@
+/*
 
+    Podľa svojho BMI čísla zistite relatívne riziko úmrtia. Toto zistenie rozumne vypíšte, ale iba v prípade, že textová reprezentácia existuje.
 
+*/
+var riziko: String?
+var rizikoN: String?
 
-var butterCount: Double = 2
-var rollCount:Double = 1
-let CenaMasla: Double = 1
-let CenaRozka: Double = 0.1
+var bmiHodnota: Double
+var vyska = 1.75 // v M
+var hmotnost = 55.6 // v KG
 
-var customerCount: UInt
+bmiHodnota =  hmotnost / (vyska * vyska)
 
-customerCount = 14
-
-Double (customerCount) * (butterCount * CenaMasla + rollCount * CenaRozka)
-
-var greeting = "vitajte v nasom obchode, "
-var name: String
-var greetingWithName: String
-
-name = "Marko"
-greetingWithName = greeting + name
-
-var weightOfBagContent: Double?
-weightOfBagContent = 4
-
-//   Nakup
-let carryOfBag = 10.0  //in kg
-let smallButterWeight = 100.0
-var smallButterCount = 4.0 // in grams
-let milkWeight = 1.0 // in kg
-var milkCount = 4.0
-
-var hmotnostNakupu = smallButterCount * smallButterWeight * 0.001  +  milkCount * milkWeight 
-
-
-if hmotnostNakupu < 10 {
-   print ("dokaze to.")
+if bmiHodnota < 18.5 {
+        riziko = "stredne zvýšené riziko"
 }
 
-if hmotnostNakupu > 10 {
-    print ("neunesie to ")
+if bmiHodnota > 18.5 && bmiHodnota < 24.9 {
+    riziko = "veľmi nízke riziko"
 }
- 
 
-3<1
+if bmiHodnota > 24.9 && bmiHodnota < 29.9 {
+    riziko = "nízke riziko"
+}
 
-Nasa trieda je ako krieda
-mina sa tu vzduch
-vsetko okolo nas sa tu strieda
-mame tu strasny puch
-oj ten martin to je slepuch
+if bmiHodnota > 30.0 && bmiHodnota < 34.9 {
+    riziko = "vysoké riziko"
+}
+
+if bmiHodnota > 35.0 && bmiHodnota < 39.9 {
+    riziko = "veľmi vysoké riziko"
+}
+
+if bmiHodnota > 40  {
+    rizikoN = "Životu nebezpečné"
+}
+if riziko != nil {
+    print("Máte \(riziko!) úmrtia.")
+}
+if rizikoN != nil {
+    print ("Máte \(rizikoN!) riziko úmrtia.")
+}
+
