@@ -8,7 +8,7 @@ var rizikoN: String?
 
 var bmiHodnota: Double
 var vyska = 1.85 // v m
-var hmotnost = 87.4 // v KG
+var hmotnost = 87.4 // v kg
 
 bmiHodnota =  hmotnost / (vyska * vyska)
 
